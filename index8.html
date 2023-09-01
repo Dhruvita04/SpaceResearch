@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ISRO Missions Dashboard</title>
+    <style>
+        /* Your CSS styles for the dashboard layout go here */
+        .corner-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .corner-title {
+            font-size: 20px;
+        }
+        .corner-content {
+            margin-top: 20px;
+        }
+        #dashboard-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            text-align: right;
+        }
+        #dashboard-title {
+            font-size: 20px;
+        }
+        #live-progress {
+            margin-top: 20px;
+        }
+        #video-container {
+            text-align: center;
+        }
+        #video-section iframe {
+            margin: 0 auto;
+        }
+        body{
+            background: url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BzdTYzYW1hb2trYTJwYWoxZWhrdjhvdzdxamkycDd2ZXoxNzcxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h8sRbOtj55JACfGn8R/giphy.gif);
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="corner-container" id="top-left-content">
+        <h1 class="corner-title">Top Left Content</h1>
+        <div class="corner-content">
+            <!-- Content for the left corner -->
+            <h2>ISRO Missions Dashboard</h2>
+            <section id="live-progress">
+                <h3>Live Mission Progress</h3>
+                <div id="progress-data">
+                    <p>Current Status: In Progress</p>
+                    <p>Remaining Fuel: 60%</p>
+                    <p>Lifespan Duration: 4 years</p>
+                    <p>Present Location: Orbiting Mars</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="dashboard-container">
+        <h1 id="dashboard-title">ISRO Missions Dashboard</h1>
+        <section id="live-progress">
+            <h2>Live Mission Progress</h2>
+            <div id="progress-data">
+                <!-- Content for the right corner -->
+                <p>Current Status: In Progress</p>
+                <p>Remaining Fuel: 60%</p>
+                <p>Lifespan Duration: 4 years</p>
+                <p>Present Location: Orbiting Mars</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Display high-quality images and videos here -->
+    <div id="progress-3d-viewer">
+        <!-- Replace the following iframe with the iframe code from your 3D viewer -->
+       
+    </div>
+
+    <section id="video-section">
+        <h2>Video</h2>
+        <div id="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RjDhvrQswIo" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Merged Sketchfab iframe -->
+    <section id="sketchfab-section">
+        <h2>Sketchfab Models</h2>
+        <div class="sketchfab-embed-wrapper">
+            <iframe title="ISRO" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a0cb59271cf540bfba324d7c3034d3d3/embed"></iframe>
+            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"><a href="https://sketchfab.com/3d-models/rocket-isro-a0cb59271cf540bfba324d7c3034d3d3?utm_medium=embed&utm_campaign=share-popup&utm_content=a0cb59271cf540bfba324d7c3034d3d3" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">ISRO</a></p>
+        </div>
+        <div class="sketchfab-embed-wrapper">
+            <iframe title="Solar Orbiter" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/30650fe7bf624c8ca070efe9bd7d7a14/embed"></iframe>
+            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"><a href="https://sketchfab.com/3d-models/solar-orbiter-30650fe7bf624c8ca070efe9bd7d7a14?utm_medium=embed&utm_campaign=share-popup&utm_content=30650fe7bf624c8ca070efe9bd7d7a14" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Solar Orbiter</a></p>
+        </div>
+    </section>
+
+    <script>
+        // Function to fetch and update real-time data
+        function updateRealTimeData() {
+            // Simulate fetching data from a server (replace with actual data source)
+            const missionData = {
+                status: "In Progress",
+                remainingFuel: "60%",
+                lifespanDuration: "4 years",
+                presentLocation: "Orbiting Mars"
+            };
+
+            // Update the HTML elements with the fetched data
+            document.getElementById("progress-data").innerHTML = `
+                <p>Current Status: ${missionData.status}</p>
+                <p>Remaining Fuel: ${missionData.remainingFuel}</p>
+                <p>Lifespan Duration: ${missionData.lifespanDuration}</p>
+                <p>Present Location: ${missionData.presentLocation}</p>
+            `;
+        }
+
+        // Periodically update data every 5 seconds (adjust as needed)
+        setInterval(updateRealTimeData, 5000);
+
+        // Initial data update when the page loads
+        updateRealTimeData();
+    </script>
+</body>
+</html>
