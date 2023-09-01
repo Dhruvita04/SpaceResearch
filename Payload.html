@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ISRO Missions Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .mission {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>ISRO Missions Dashboard</h1>
+    <div id="missions"></div>
+
+    <script>
+        // Sample mission data (replace with actual data)
+        const missionsData = [
+            {
+                name: "Mission 1",
+                launchDate: "2023-01-15",
+                status: "Ongoing",
+                remainingFuel: "50%",
+                lifespanDuration: "5 years",
+                presentLocation: "Geostationary Orbit",
+                objectives: "To study Earth's climate",
+                technologiesEmployed: "Advanced imaging sensors",
+                launchVehicle: "GSLV Mk III",
+                payload: "Earth observation satellite"
+            },
+            {
+                name: "Mission 2",
+                launchDate: "2022-07-10",
+                status: "Past",
+                remainingFuel: "N/A",
+                lifespanDuration: "3 years",
+                presentLocation: "Deorbited",
+                objectives: "Communication satellite",
+                technologiesEmployed: "Ku-band transponders",
+                launchVehicle: "PSLV",
+                payload: "Communication satellite"
+            },
+            {
+                name: "Mission 3",
+                launchDate: "2023-09-30",
+                status: "Upcoming",
+                remainingFuel: "N/A",
+                lifespanDuration: "TBD",
+                presentLocation: "TBD",
+                objectives: "Mars exploration",
+                technologiesEmployed: "Orbiter, rover, and lander",
+                launchVehicle: "GSLV Mk II",
+                payload: "Scientific instruments"
+            }
+        ];
+
+        // Function to create a mission card with detailed information
+        function createMissionCard(mission) {
+            const missionCard = document.createElement("div");
+            missionCard.classList.add("mission");
+            missionCard.innerHTML = `
+                <h2>${mission.name}</h2>
+                <p><strong>Launch Date:</strong> ${mission.launchDate}</p>
+                <p><strong>Status:</strong> ${mission.status}</p>
+                <p><strong>Remaining Fuel:</strong> ${mission.remainingFuel}</p>
+                <p><strong>Lifespan Duration:</strong> ${mission.lifespanDuration}</p>
+                <p><strong>Present Location:</strong> ${mission.presentLocation}</p>
+                <p><strong>Objectives:</strong> ${mission.objectives}</p>
+                <p><strong>Technologies Employed:</strong> ${mission.technologiesEmployed}</p>
+                <p><strong>Launch Vehicle:</strong> ${mission.launchVehicle}</p>
+                <p><strong>Payload:</strong> ${mission.payload}</p>
+            `;
+            return missionCard;
+        }
+
+        // Function to display missions on the dashboard
+        function displayMissions() {
+            const missionsContainer = document.getElementById("missions");
+            missionsContainer.innerHTML = "";
+            missionsData.forEach((mission) => {
+                const missionCard = createMissionCard(mission);
+                missionsContainer.appendChild(missionCard);
+            });
+        }
+
+        // Display the missions when the page loads
+        window.onload = displayMissions;
+    </script>
+</body>
+</html>

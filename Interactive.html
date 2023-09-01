@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ISRO Missions Dashboard</title>
+    <style>
+        /* Your CSS styles for the dashboard layout go here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ISRO Missions Dashboard</h1>
+    </header>
+
+    <section id="live-progress">
+        <h2>Live Mission Progress</h2>
+        <div id="progress-data">
+            <p>Current Status: Loading...</p>
+            <p>Remaining Fuel: Loading...</p>
+            <p>Lifespan Duration: Loading...</p>
+            <p>Present Location: Loading...</p>
+        </div>
+        <div id="progress-images">
+            <!-- Display high-quality images and videos here -->
+            <img src="placeholder.jpg" alt="Mission Image" width="400">
+            <video controls>
+                <source src="placeholder.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <script>
+        // Function to fetch and update real-time data
+        function updateRealTimeData() {
+            // Simulate fetching data from a server (replace with actual data source)
+            const missionData = {
+                status: "In Progress",
+                remainingFuel: "60%",
+                lifespanDuration: "4 years",
+                presentLocation: "Orbiting Mars"
+            };
+
+            // Update the HTML elements with the fetched data
+            document.getElementById("progress-data").innerHTML = `
+                <p>Current Status: ${missionData.status}</p>
+                <p>Remaining Fuel: ${missionData.remainingFuel}</p>
+                <p>Lifespan Duration: ${missionData.lifespanDuration}</p>
+                <p>Present Location: ${missionData.presentLocation}</p>
+            `;
+        }
+
+        // Periodically update data every 5 seconds (adjust as needed)
+        setInterval(updateRealTimeData, 5000);
+
+        // Initial data update when the page loads
+        updateRealTimeData();
+    </script>
+</body>
+</html>
